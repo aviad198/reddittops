@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({title, content,url,author}) => {
+const Card = ({title,url}) => {
     return(
 
           <button className={'w-75 h-auto tc bg-light-blue dib br3 ma2 grow bw2 shadow-5'} onClick={ () =>NewTab(url)}>
