@@ -19,3 +19,5 @@ To run the project locally:
 3. Run `npm start`
 
 or visit the websit:
+
+https://master.d38lgm149wi3hs.amplifyapp.com/
