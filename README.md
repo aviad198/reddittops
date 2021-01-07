@@ -1,4 +1,4 @@
-# reddittops
+# RedditTops
 Shows you the Top articles for any Subreddit.
 
 # How it works
@@ -7,11 +7,11 @@ the subreddits Top articles will appear in the frame,
 if you wish to open a subreddit topic just click on it to open a new tab.
 
 
-# frameworks
+# Frameworks
 
 ReactJS, Node.JS
 
-
+# Run the App 
 To run the project locally:
 
 1. Clone this repo
