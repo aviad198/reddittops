@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 
+/*
+catch Errors when trying to get subs and fail or set bad values to the array of subs reddits
+ */
+
 class ErrorBoundry extends Component {
     constructor(props) {
         super(props);

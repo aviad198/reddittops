@@ -8,52 +8,60 @@ import CardList from "../Components/CardList";
 
 class App extends React.Component {
 
+    /*
+    constructor init the topReddits array and the searched
+     */
     constructor() {
         super();
         this.state = {
             topReddits: [],
-            searchfield: 'sisco'
+            searchfield: ''
         }
     }
 
+    /*
+    sets the search field
+     */
     onSearchChange = (event) => {
         this.setState({searchfield: event.target.value})
     }
 
+    /*
+    when sumbit calss getTopReddits to fetch API data
+     */
     onButtonSubmit = () => {
         this.getTopReddits(this.state.searchfield)
     }
 
-
+/*
+Sync func to fetches Api data
+gets the serchfield text and fetch JSON file from the subreddit
+set states
+ if error accords set topReddits to  empty array
+ */
     async getTopReddits(searchfield) {
         try {
             const resp = await fetch(`https://www.reddit.com/r/${searchfield}/top.json`)
             const data = await resp.json()
-            console.log(data)
             this.setState({topReddits: data.data.children})}
         catch(err)
             {
-                console.log(err)
                 this.setState({topReddits: []})
             }
         }
 
-        async componentDidMount()
+        /*
+        shows news subreddit on component mount
+         */
+         componentDidMount()
         {
-            try {
-                const resp = await fetch('https://www.reddit.com/r/news/top.json')
-                const data = await resp.json()
-                this.setState({topReddits: data.data.children})
-                console.log(this.state.topReddits)
-            } catch (err) {
-                console.log(err)
-                this.setState({topReddits: []})
-            }
-        }
 
+             this.getTopReddits('news')
+        }
 
         render()
         {
+           /* get state topReddits array*/
             const topReddits = this.state.topReddits;
             return(
                         <div className={'tc'}>
@@ -63,6 +71,7 @@ class App extends React.Component {
                                 onSubmit={this.onButtonSubmit}/>
                             <Scroll>
                                 <ErrorBoundry>
+                                    {/*if ther is no sub reddit display "no such.." otherwise display cards*/}
                                     {!topReddits.length ? <h1>No subreddits found</h1> :  <CardList topReddits={topReddits}/>}
                                 </ErrorBoundry>
                             </Scroll>

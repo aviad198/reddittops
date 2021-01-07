@@ -1,6 +1,10 @@
 import React from 'react'
 import Card from "./Card";
 
+/*
+CardList gets JSON array of subreddits and create a card for each one
+ */
+
 const CardList = ({topReddits}) => {
     console.log(topReddits)
     return (

@@ -9,7 +9,7 @@ if you wish to open a subreddit topic just click on it to open a new tab.
 
 # Frameworks
 
-ReactJS, Node.JS
+ReactJS, Express.JS
 
 # Run the App 
 To run the project locally:

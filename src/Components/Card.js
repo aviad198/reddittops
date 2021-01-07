@@ -1,5 +1,9 @@
 import React from 'react';
 
+/*
+Card comp returns a Button with the subreddit title and a function to open it in a new tab
+ */
+
 const Card = ({title,url}) => {
     return(
 
