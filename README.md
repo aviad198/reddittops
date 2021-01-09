@@ -22,7 +22,7 @@ or visit the websit:
 
 https://master.d38lgm149wi3hs.amplifyapp.com/
 
-#RestFulApi
+# RestFulApi
 
 1. Clone this repo
 2. Run node server.js
