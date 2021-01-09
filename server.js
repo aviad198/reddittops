@@ -14,20 +14,21 @@ app.get('/subreddit/:name', (req, res) => {
 
     fetch(`https://www.reddit.com/r/${name}/top.json`).then(response => response.json())
         .then(data => {
-            data.data.children.map((sub, i) => {
-                arr.push(
-                    key = i,
-                    title = sub.data.title,
-                    url = sub.data.url)
-            })
+            const arr1 = data.data.children.map((sub, i) => (
+                {
+                    key: i,
+                    title: sub.data.title,
+                    url: sub.data.url
+                }
+
+
+        ));
+            if (arr1.length) {
+                res.status(200).json(arr1)
+            } else {
+                res.status(400).json('Not found')
+            }
         }).catch(err => res.status(400).json('error getting user'))
-
-    if (arr.length) {
-        res.status(200).json(arr)
-    } else {
-        res.status(400).json('Not found')
-    }
-
 })
 
 app.listen(3001);
