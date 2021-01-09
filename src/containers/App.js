@@ -71,7 +71,7 @@ set states
                                 onSubmit={this.onButtonSubmit}/>
                             <Scroll>
                                 <ErrorBoundry>
-                                    {/*if ther is no sub reddit display "no such.." otherwise display cards*/}
+                                    {/*if theres is no sub reddit display "no such.." otherwise display cards*/}
                                     {!topReddits.length ? <h1>No subreddits found</h1> :  <CardList topReddits={topReddits}/>}
                                 </ErrorBoundry>
                             </Scroll>
