@@ -21,3 +21,10 @@ To run the project locally:
 or visit the websit:
 
 https://master.d38lgm149wi3hs.amplifyapp.com/
+
+#RestFulApi
+
+1. Clone this repo
+2. Run node server.js
+3. get by running http://localhost:3001/subreddit/{subreddit name}
+
